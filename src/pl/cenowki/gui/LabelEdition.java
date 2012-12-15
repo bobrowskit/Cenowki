@@ -18,6 +18,9 @@ import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.event.MouseInputAdapter;
 
+import pl.cenowki.items.LabelObject;
+import pl.cenowki.items.Text;
+
 public class LabelEdition extends JPanel  {
 	
 	
@@ -26,12 +29,12 @@ public class LabelEdition extends JPanel  {
 	private Graphics2D offgc;
 	private LabelObject selectedRectangle;
 	private LinkedList<LabelObject> list = new LinkedList<LabelObject>();
-	private Class<? extends LabelObject> classToDraw;
+	private Class<? extends LabelObject> objectToDraw;
 	JTextField textEditor = null; 
 	
-	private boolean leftUpperCorner = false;
+	private boolean leftUpperCorner  = false;
 	private boolean rightUpperCorner = false;
-	private boolean leftLowerCorner = false;
+	private boolean leftLowerCorner  = false;
 	private boolean rightLowerCorner = false;
 
 	public LabelEdition() {
@@ -63,7 +66,7 @@ public class LabelEdition extends JPanel  {
 	}
 
 	public void setClassToDraw(Class<? extends LabelObject> lo) {
-		classToDraw = lo;
+		objectToDraw = lo;
 	}
 	
 	public void setFontSize(int size) {
@@ -94,10 +97,10 @@ public class LabelEdition extends JPanel  {
 					selectedRectangle = null;
 					return;
 				}
-				if(classToDraw == null) return;
+				if(objectToDraw == null) return;
 				LabelObject newObject;
 				try {
-					newObject = classToDraw.newInstance();
+					newObject = objectToDraw.newInstance();
 					newObject.setPosition(e.getPoint());
 					list.add(newObject);
 					repaint();
@@ -192,6 +195,7 @@ public class LabelEdition extends JPanel  {
 
 		});
 	}
+	
 	public void removeTextEditor(JTextField t) {
 		this.remove(t);
 	}
