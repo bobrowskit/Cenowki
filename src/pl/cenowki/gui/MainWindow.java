@@ -173,7 +173,7 @@ public class MainWindow {
 		gbc_btnNewButton_3.gridy = 0;
 		panel.add(btnNewButton_3, gbc_btnNewButton_3);
 		
-		JPanel toolsPanel = new JPanel();
+		JPanel toolsPanel = new ToolsPanel();
 		toolsPanel.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
 		gbc_panel_1.insets = new Insets(0, 0, 0, 5);
@@ -181,31 +181,7 @@ public class MainWindow {
 		gbc_panel_1.gridx = 0;
 		gbc_panel_1.gridy = 1;
 		frame.getContentPane().add(toolsPanel, gbc_panel_1);
-		GridBagLayout gbl_panel_1 = new GridBagLayout();
-		gbl_panel_1.columnWidths = new int[]{0, 0};
-		gbl_panel_1.rowHeights = new int[]{0, 0, 0};
-		gbl_panel_1.columnWeights = new double[]{0.0, Double.MIN_VALUE};
-		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		toolsPanel.setLayout(gbl_panel_1);
-		
-		
-		JRadioButton rdbtnNazwaTowaru = new JRadioButton("Nazwa towaru");
-		GridBagConstraints gbc_rdbtnNazwaTowaru = new GridBagConstraints();
-		gbc_rdbtnNazwaTowaru.insets = new Insets(0, 0, 5, 0);
-		gbc_rdbtnNazwaTowaru.gridx = 0;
-		gbc_rdbtnNazwaTowaru.gridy = 0;
-		toolsPanel.add(rdbtnNazwaTowaru, gbc_rdbtnNazwaTowaru);
-		
-		JRadioButton rdbtnStayTekst = new JRadioButton("Sta\u0142y tekst");
-		GridBagConstraints gbc_rdbtnStayTekst = new GridBagConstraints();
-		gbc_rdbtnStayTekst.anchor = GridBagConstraints.WEST;
-		gbc_rdbtnStayTekst.gridx = 0;
-		gbc_rdbtnStayTekst.gridy = 1;
-		toolsPanel.add(rdbtnStayTekst, gbc_rdbtnStayTekst);
-		
-		ButtonGroup bg = new ButtonGroup();
-		bg.add(rdbtnNazwaTowaru);
-		bg.add(rdbtnStayTekst);
+
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.RED);
