@@ -1,0 +1,6 @@
+package pl.cenowki.items;
+
+public enum TextType {
+	NAZWA_TOWARU, NAZWA_PRODUCENTA, CENA_NETTO, CENA_BRUTTO, VAT, PRZECENA_PROCENT, PRZECENA_WARTOSC, STATIC
+
+}
